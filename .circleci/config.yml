@@ -8,7 +8,7 @@ jobs:
           install-yarn: true
       - run: yarn install
       - run: yarn test
-      - run: store_test_results
+      - store_test_results
 orbs:
   node: circleci/node@4.1.0
 version: 2.1
