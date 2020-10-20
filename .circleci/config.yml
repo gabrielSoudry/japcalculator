@@ -8,7 +8,8 @@ jobs:
           install-yarn: true
       - run: yarn install
       - run: yarn test
-      - store_test_results
+      - store_test_results:
+          path: /japcalculator/
 orbs:
   node: circleci/node@4.1.0
 version: 2.1
