@@ -9,7 +9,8 @@ jobs:
       - run: yarn install
       - run: yarn test
       - run: mkdir -p ./test-results/junit
-      - run: yarn test --ci --reporters=jest-junit
+      - run: npm install jest-junit
+      - run: yarn --ci --reporters=jest-junit
       - store_test_results:
           path: ./test-results
 orbs:
