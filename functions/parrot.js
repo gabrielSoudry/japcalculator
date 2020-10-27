@@ -7,7 +7,7 @@ exports.handler = async function (event, context) {
   if (message) {
     return {
       statusCode: 200,
-      body: JSON.stringify({ message: message.name }),
+      body: JSON.stringify({ message: "je passe par ici" }),
     };
   } else {
     return {
