@@ -5,7 +5,7 @@ exports.handler = async function (event, context) {
   const message = requestBody.message;
   let body = event.queryStringParameters;
 
-  if (body.name === "") {
+  if (!(body.name === "" || !body.name)) {
     return {
       statusCode: 200,
       body: JSON.stringify({ message: body.name }),
