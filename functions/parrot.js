@@ -1,19 +1,19 @@
 const querystring = require("querystring");
 
-exports.handler = async function (event, context) {
+exports.handler = async function (event, context, callback) {
   const requestBody = JSON.parse(event.body);
   const message = requestBody.message;
   let body = event.queryStringParameters;
 
   if (!(body.name === "" || !body.name)) {
-    return {
+    return callback(null, {
       statusCode: 200,
       body: JSON.stringify({ message: body.name }),
-    };
+    });
   } else {
-    return {
-      statusCode: 418,
-      body: JSON.stringify({ message: "Hello" }),
-    };
+    return callback(null, {
+      statusCode: 200,
+      body: JSON.stringify({ message: "hello" }),
+    });
   }
 };
